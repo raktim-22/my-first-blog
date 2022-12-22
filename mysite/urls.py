@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('blog.urls')),
+    path('',include('blog.urls')), #django redirects to blogs.url and looks for further commands
+    
 ]
