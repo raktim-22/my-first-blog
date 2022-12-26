@@ -1,3 +1,0 @@
-username:djangoman
-email:123@gmail.com
-password:django123#
