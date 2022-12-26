@@ -10,15 +10,17 @@
     </head>
     <body>
         <header class="page-header">
-          <div class="container">
-            {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu">
-                    {% include './icons/file-earmark-plus.svg' %}
-                </a>
-            {% endif %}
-              <h1><a href="/">DjangoMan blog</a></h1>
-          </div>
-        </header>
+            <div class="page-header">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'post_new' %}" class="top-menu"><button type="button" class="btn btn-primary">Add</button></a>
+                    <p><a href="{% url 'post_draft_list' %}" class="edt-menu"> <button type="button" class="btn btn-danger">Edit</button></a></p>
+                    <p class="top-menu">Hello, {{ user.username }}(<a href="{% url 'logout' %}">Log out</a>)</p>
+                {% else %}
+                    <a href="{% url 'login' %}" class="top-menu"><button type="button" class="btn btn-primary">login</button></a>
+                {% endif %}
+                <h1><a href="/">DjangoMan Blog</a></h1>
+            </div>
+        </header> 
         <main class="container">
             <div class="row">
                 <div class="col">
